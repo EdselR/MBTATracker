@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:elevation="8dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="311dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/MBTA_Black" />
+
+            <TextView
+                android:id="@+id/stopName"
+                android:background="@color/MBTA_Green"
+                android:textColor="@color/MBTA_White"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chestnut Hill"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/stopDirection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Direction: Riverside"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/estimatedTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current Arrival: 3 min"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/nextArrival"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next Arrival: 8 min"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/MBTA_Black" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/subway_station" />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

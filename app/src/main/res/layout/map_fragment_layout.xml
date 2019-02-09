@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/MBTA_Green">
+
+    <RelativeLayout
+        android:id="@+id/relativeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/the_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            map:cameraTargetLat="40"
+            map:cameraTargetLng="-110"
+            map:cameraZoom="5"/>
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <Button
+                android:id="@+id/searchThisArea"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_height="42dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="Search this Area"
+                android:background="@drawable/rounded_bt"/>
+
+
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/maximizeBt"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            android:visibility="gone"
+            android:background="@drawable/up_arrow" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/mapCardview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:elevation="20dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/minimizeBt"
+                android:layout_width="31dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/small_arrow"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nameField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:background="@color/MBTA_Green"
+                android:text="Stop Information"
+                android:textAlignment="center"
+                android:textColor="@color/MBTA_White"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/MBTA_Black"
+                map:layout_constraintBottom_toTopOf="@id/minimizeBt"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/directionField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:text="Direction: "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintHorizontal_bias="0.108"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/MBTA_Black"
+                map:layout_constraintBottom_toTopOf="@+id/etaField"
+                map:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/etaField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Arrival time:"
+                android:textSize="18dp"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintHorizontal_bias="0.113"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toBottomOf="@+id/directionField" />
+
+            <TextView
+                android:id="@+id/nextField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:text="Next Arrival:"
+                android:textSize="18dp"
+                map:layout_constraintEnd_toStartOf="@+id/floatingBt"
+                map:layout_constraintHorizontal_bias="0.093"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toBottomOf="@+id/etaField" />
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingBt"
+                android:layout_width="64dp"
+                android:layout_height="61dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:src="@drawable/subscribe"
+                map:backgroundTint="@color/MBTA_Green"
+                map:elevation="10dp"
+                map:layout_constraintBottom_toBottomOf="parent"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:pressedTranslationZ="20dp" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

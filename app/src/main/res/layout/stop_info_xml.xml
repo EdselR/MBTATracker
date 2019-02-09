@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:background="@color/MBTA_Green"
+            android:paddingTop="5dp"
+            android:src="@drawable/mbta_logo" />
+
+        <TextView
+            android:id="@+id/stopInfoName"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@color/MBTA_Green"
+            android:text="Chestnut Hill"
+            android:textAlignment="center"
+            android:textColor="@color/MBTA_White"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="Description:"
+            android:layout_marginEnd="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/stopInfoDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="2dp"
+            android:text="Cleveland Circle - Green Line - Park Street and North"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/stopInfoDirection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Direction: Riverside"
+            android:textSize="20dp"/>
+
+        <fragment
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:id="@+id/stop_map"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            map:cameraTargetLat="40"
+            map:cameraTargetLng="-110"
+            map:cameraTilt="45"
+            map:uiZoomControls="true"
+            map:cameraZoom="3"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
